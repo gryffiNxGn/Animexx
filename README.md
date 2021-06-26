@@ -1,3 +1,3 @@
 # WebAnw2
 
-Eventseite inkl. Turnierplaner; für Animexx Stuttgart
+Prototypen der Eventseite inkl. Turnierplaner; für Animexx Stuttgart
