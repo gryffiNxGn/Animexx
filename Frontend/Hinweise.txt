@@ -1,6 +1,0 @@
-Für den dynamischen Prototyp wurden folgende Seiten umgesetzt:
-
--date.html -> Liste von Terminen
--team.html -> Teammitglieder Bilder, Name, Animexx Profil, Beschreibung, E-Mail
--tournament.html -> Bilder, Bezeichnung, Datum, Kurzbeschreibung
--tournamentdetail.html -> Nur der obere Teil (Turniertitel, Bild, Datum, Beschreibung) | Der Untere Teil (Turnieranmeldung, Abmeldung, Plan) wird erst bei der finalen Abgabe zusammen mit den Benutzeraccounts erstellt
