@@ -1,9 +1,0 @@
--Index.html zeigt den ausgeloggten Zustand an (Anmeldeknopf rechts oben)
--Andere Seiten zeigen den eingeloggten Zustand
--Tournamentdetails in 3 Versionen für 3 Zustände:
-  -> tournamentdetail.html = ausgeloggter Zustand
-  -> tournamentdetail2.html = eingeloggter Zustand, noch nicht für das Turnier angemeldet
-  -> tournamentdetail3.html = eingeloggter Zustand, für das Turnier angemeldet
-
-Farbgebung und diverse Elemente entsprechend der Besprechung vom 14.04.21 etwas angepasst.
-Navigation bleibt im alten Zustand, ohne Untermenüs, da so die Vorgabe der Animexx Stuttgart ist.
