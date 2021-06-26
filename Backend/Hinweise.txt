@@ -1,2 +1,0 @@
-die ".env" Datei wurde umbenannt in "ENV.env", da GitHub diese Datei ansonsten automatisch versteckt. 
-Bitte die "ENV.env" in -> ".env" (ohne vorderen Teil, nur .env) umbenennen.
