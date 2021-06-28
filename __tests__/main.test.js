@@ -61,7 +61,7 @@ test('should be correctly logging in existing user over UI', async () => {
 	});
 	const page = await browser.newPage();
 	await page.goto(
-		'https://raw.githubusercontent.com/gryffiNxGn/Testing/main/Frontend/index.html?token=ATLESHEUAHHFLBLVL4K6F4DA3GMSM'
+		'https://raw.githack.com/gryffiNxGn/Testing/main/Frontend/index.html'
 	);
 	await page.click('#loginBtn');
 	await page.click('#loginEmail');
