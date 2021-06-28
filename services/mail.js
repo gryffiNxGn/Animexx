@@ -1,6 +1,6 @@
 const express = require('express');
 const helper = require('../helper.js');
-const MailDao = require('../dao/MailDao.js');
+const MailDao = require('../dao/mailDao.js');
 const bcrypt = require('bcrypt');
 const crypto = require("crypto");
 var serviceRouter = express.Router();
