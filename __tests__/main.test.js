@@ -61,7 +61,7 @@ test('should be correctly logging in existing user over UI', async () => {
 	});
 	const page = await browser.newPage();
 	await page.goto(
-		'file:../Frontend/index.html'
+		'file:///../Frontend/index.html'
 	);
 	await page.click('#loginBtn');
 	await page.click('#loginEmail');
