@@ -69,6 +69,7 @@ test('should be correctly logging in existing user over UI', async () => {
 	await page.type('#loginPassword', user.password);
 	await page.click('#loginButton');
 	await page.waitForSelector('.loggedIn');
+	await browser.close();
 },10000);
 
 afterAll(async () => {
