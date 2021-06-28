@@ -1,8 +1,8 @@
 const helper = require('../helper.js');
 const sgMail = require('@sendgrid/mail')
 //const generateTemporaryUserPassword = require('./generateTemporaryUserPassword')
-sgMail.setApiKey(sendgridAPIKey)
-
+//sgMail.setApiKey(sendgridAPIKey)
+/*
 class MailDao {
 
     constructor(dbConnection) {
@@ -78,5 +78,6 @@ class MailDao {
 		return result;
 	}
 }
+*/
 
 module.exports = MailDao;
