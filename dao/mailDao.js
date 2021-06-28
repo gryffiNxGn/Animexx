@@ -2,7 +2,7 @@ const helper = require('../helper.js');
 const sgMail = require('@sendgrid/mail')
 //const generateTemporaryUserPassword = require('./generateTemporaryUserPassword')
 //sgMail.setApiKey(sendgridAPIKey)
-/*
+
 class MailDao {
 
     constructor(dbConnection) {
@@ -12,7 +12,7 @@ class MailDao {
     getConnection() {
         return this._conn;
     }
-	
+	/*
 	sendGeneralEmail(name, email, message){
 		const msg = {
 			to: 'animexx.contact@gmail.com',
@@ -77,7 +77,7 @@ class MailDao {
 		
 		return result;
 	}
+	*/
 }
-*/
 
 module.exports = MailDao;
