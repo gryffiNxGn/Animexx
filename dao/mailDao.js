@@ -1,7 +1,6 @@
 const helper = require('../helper.js');
 const sgMail = require('@sendgrid/mail')
 //const generateTemporaryUserPassword = require('./generateTemporaryUserPassword')
-const sendgridAPIKey = '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'
 sgMail.setApiKey(sendgridAPIKey)
 
 class MailDao {
