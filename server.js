@@ -76,16 +76,19 @@ try {
         helper.log('Error occured, 404, resource not found');
         response.status(404).json(helper.jsonMsgError('Resource not found'));
     });
-
+	
+	module.exports.app = app;
 
     // starting the Web Server
     helper.log('\nBinding Port and starting Webserver...');
-    app.listen(HTTP_PORT, () => {
+    const server = app.listen(HTTP_PORT, () => {
         helper.log('Listening at localhost, port ' + HTTP_PORT);
         helper.log('\n\n-----------------------------------------');
         helper.log('exit / stop Server by pressing 2 x CTRL-C');
         helper.log('-----------------------------------------\n\n');
     });
+	
+	module.exports.server = server;
 
 } catch (ex) {
     helper.logError(ex);
