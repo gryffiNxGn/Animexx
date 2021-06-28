@@ -15,8 +15,8 @@ $(document).ready(function() {
 function stringToHash(string) {
 	var hash = 0;
 	if (string.length == 0) return hash;
-	for (i = 0; i < string.length; i++) {
-		char = string.charCodeAt(i);
+	for (var i = 0; i < string.length; i++) {
+		var char = string.charCodeAt(i);
 		hash = ((hash << 5) - hash) + char;
 		hash = hash & hash;
 	}
@@ -55,18 +55,18 @@ function initMultiTabHandler() {
 }
 
 function initAccountBoxHandler() {
-	login = $('.navExt .login');
-	forgotPassword = $('.navExt .forgotPassword');
-	register = $('.navExt .register');
+	var login = $('.navExt .login');
+	var forgotPassword = $('.navExt .forgotPassword');
+	var register = $('.navExt .register');
 	
-	forgotPasswordButton = $('.navExt .login .forgotPasswordOpener');
-	registerButton = $('.navExt .login #registerLink');
-	loginButton = $('.navExt #loginBtn');
+	var forgotPasswordButton = $('.navExt .login .forgotPasswordOpener');
+	var registerButton = $('.navExt .login #registerLink');
+	var loginButton = $('.navExt #loginBtn');
 	
-	dropdown = $('.navExt .accountDropdownBox');
+	var dropdown = $('.navExt .accountDropdownBox');
 	
-	registerBackButton = $('.navExt .register .backToLogin');
-	forgotPasswordBackButton = $('.navExt .forgotPassword .backToLogin');
+	var registerBackButton = $('.navExt .register .backToLogin');
+	var forgotPasswordBackButton = $('.navExt .forgotPassword .backToLogin');
 	
 	forgotPasswordButton.click(function(e) {
 		e.preventDefault();
@@ -155,7 +155,7 @@ function initAccountBoxOpener() {
 	});
 }
 
-async function initAccountLogin() {
+function initAccountLogin() {
 	$('#loginEmail').focusout(function() {
         validateEmail();
     });
@@ -164,13 +164,13 @@ async function initAccountLogin() {
         validatePassword();
     });
 	
-	$loginEmail = $('#loginEmail');
-	$loginEmailInvalid = $('#loginEmailInvalid');
-	$loginPassword = $('#loginPassword');
-	$loginPasswordInvalid = $('#loginPasswordInvalid');
+	var $loginEmail = $('#loginEmail');
+	var $loginEmailInvalid = $('#loginEmailInvalid');
+	var $loginPassword = $('#loginPassword');
+	var $loginPasswordInvalid = $('#loginPasswordInvalid');
 	
-	$loginEmailError = false;
-	$loginPasswordError = false;
+	var $loginEmailError = false;
+	var $loginPasswordError = false;
 	
 	function validateEmail() {
 		$loginEmailValue = $loginEmail.val();
@@ -208,10 +208,10 @@ async function initAccountLogin() {
 		}
 	}
 	
-	async function validatePassword() {
+	function validatePassword() {
 		$loginEmailVal = $("#loginEmail").val();
 		$loginPasswordVal = $("#loginPassword").val();
-		var hashedpw = await stringToHash($loginPasswordVal).toString();
+		var hashedpw =   stringToHash($loginPasswordVal).toString();
 		
 		$loginPasswordValue = $loginPassword.val();
 		if($loginPasswordValue.length >= 6 && $loginPasswordValue.length <= 26) {
@@ -260,10 +260,10 @@ async function initAccountLogin() {
         }
 	});
 	
-	async function loginAccount() {
+	function loginAccount() {
 		$loginEmailVal = $("#loginEmail").val();
 		$loginPasswordVal = $("#loginPassword").val();
-		var hashedpw = await stringToHash($loginPasswordVal).toString();
+		var hashedpw =   stringToHash($loginPasswordVal).toString();
 		
 		$formData = {
 			email : $loginEmailVal,
@@ -291,7 +291,7 @@ async function initAccountLogin() {
 	}
 }
 
-async function initAccountRegistration() {
+function initAccountRegistration() {
     $('#registerNick').focusout(function() {
         validateNick();
     });
@@ -312,24 +312,24 @@ async function initAccountRegistration() {
         validatePasswordRepeat();
     });
 	
-	$nick = $('#registerNick');
-	$name = $('#registerName');
-	$email = $('#registerEmail');
-	$password = $('#registerPassword');
-	$passwordRepeat = $('#registerPasswordRepeat');
+	var $nick = $('#registerNick');
+	var $name = $('#registerName');
+	var $email = $('#registerEmail');
+	var $password = $('#registerPassword');
+	var $passwordRepeat = $('#registerPasswordRepeat');
 	
-	$regNickInvalid = $('#regNickInvalid');
-	$regNameInvalid = $('#regNameInvalid');
-	$regEmailTaken = $('#regEmailTaken');
-	$regEmailInvalid = $('#regEmailInvalid');
-	$regPasswordInvalid = $('#regPasswordInvalid');
-	$regPasswordRepeatInvalid = $('#regPasswordRepeatInvalid');
+	var $regNickInvalid = $('#regNickInvalid');
+	var $regNameInvalid = $('#regNameInvalid');
+	var $regEmailTaken = $('#regEmailTaken');
+	var $regEmailInvalid = $('#regEmailInvalid');
+	var $regPasswordInvalid = $('#regPasswordInvalid');
+	var $regPasswordRepeatInvalid = $('#regPasswordRepeatInvalid');
 	
-	$nickError = false;
-	$nameError = false;
-	$emailError = false;
-	$passwordError = false;
-	$passwordRepeatError = false;
+	var $nickError = false;
+	var $nameError = false;
+	var $emailError = false;
+	var $passwordError = false;
+	var $passwordRepeatError = false;
       
     function validateNick() {
 		$nickValue = $nick.val();
@@ -434,9 +434,9 @@ async function initAccountRegistration() {
         }
     });
 	
-	async function createAccount() {
+	function createAccount() {
 		$registerPasswordVal = $("#registerPassword").val();
-		var hashedpw = await stringToHash($registerPasswordVal).toString();
+		var hashedpw = stringToHash($registerPasswordVal).toString();
 		
 		$formData = {
 			name : $('#registerName').val(),
@@ -471,12 +471,12 @@ function initAccountForgotPassword() {
         validateEmail();
     });
 	
-	$forgotPasswordEmail = $('#forgotPasswordEmail');
+	var $forgotPasswordEmail = $('#forgotPasswordEmail');
 	
-	$forgotPasswordEmailFalse = $('#forgotPasswordEmailFalse');
-	$forgotPasswordInvalid = $('#forgotPasswordEmailInvalid');
+	var $forgotPasswordEmailFalse = $('#forgotPasswordEmailFalse');
+	var $forgotPasswordInvalid = $('#forgotPasswordEmailInvalid');
 	
-	$forgotPasswordEmailError = false;
+	var $forgotPasswordEmailError = false;
 	
 	function validateEmail() {
 		$emailValue = $forgotPasswordEmail.val();
@@ -578,3 +578,5 @@ function initLoginPageViewHandler() {
 		$('body').addClass('loggedOut').removeClass('loggedIn');
 	}
 }
+
+exports.stringToHash = stringToHash;
