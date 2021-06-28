@@ -1,5 +1,5 @@
 // Tests for main functions on Animexx Website
-const main = require('../../Frontend/js/main');
+const main = require('../Frontend/js/main');
 const puppeteer = require('puppeteer');
 const bootstrap = require('bootstrap');
 const popperjs = require('@popperjs/core');
