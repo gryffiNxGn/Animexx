@@ -176,7 +176,7 @@ serviceRouter.post('/user/check', async(request, response) => {
 			const email = request.body.email;
 			const user = { email: email };
 			const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-			response.json({ accessToken: accessToken });
+			response.status(200).json({ accessToken: accessToken });
 		}
 		else {
 			throw new Error('User has no access');
