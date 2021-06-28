@@ -55,7 +55,7 @@ test('should correctly fill webtoken with user data when logging in', async () =
 
 test('should be correctly logging in existing user over UI', async () => {
 	const browser = await puppeteer.launch({
-		headless: false,
+		headless: true,
 		slowMo: 80,
 		args: ['--windows-size=1920,1080']
 	});
