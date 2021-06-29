@@ -4,7 +4,7 @@
   "description": "Backend for Animexx Stuttgart",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "jest": {
     "setupFiles": [
