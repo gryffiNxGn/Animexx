@@ -12,21 +12,24 @@ let user = {
     password: '123456',
 };
 
-test('should correctly hash passwords in textfields', () => {
+test('Unit Test: should correctly hash passwords in textfields', () => {
+	console.log("****Unit Test: should correctly hash passwords in textfields****");
 	const password = "123456";
 	const hash = main.stringToHash(password);
 	expect(hash).toBe(1450575459);
 });
 
-test('Unit test: Get TournamentPlaner Brackets', async () => {
+test('Integration Test: Should correctly retrieve TournamentPlaner Brackets from db', async () => {
+	console.log("****Integration Test: Should correctly retrieve TournamentPlaner Brackets from db****");
     const response = await request(app.app).post('/api/tournament/tournamentPlaner').send({
         id: 1,
     }).expect(200);
-    console.log("***************************" + response.body.daten);
+    console.log("****" + response.body.daten + "****");
     expect(response.body.daten).toStrictEqual([[ 'gryffin', 'Soul' ],[ 'Hunter', null ],[ 'Darkness', 'Dark' ],[ 'Cherry', null ]]);
 }, 30000);
 
-test('should correctly generate and sign webtoken when logging in', async () => {
+test('Integration Test: should correctly generate and sign webtoken when logging in', async () => {
+	console.log("****Integration Test: should correctly generate and sign webtoken when logging in****");
 	const response = await request(app.app)
 		.post('/api/user/check')
 		.send({
@@ -37,7 +40,8 @@ test('should correctly generate and sign webtoken when logging in', async () => 
 	const jwt = response.body.accessToken;
 },10000);
 
-test('should correctly fill webtoken with user data when logging in', async () => {
+test('Integration Test: should correctly fill webtoken with user data when logging in', async () => {
+	console.log("****Integration Test: should correctly fill webtoken with user data when logging in****");
 	const response = await request(app.app)
 		.post('/api/user/check')
 		.send({
@@ -53,7 +57,8 @@ test('should correctly fill webtoken with user data when logging in', async () =
 	console.log("Username: " + user.email + "\n" + "TokenUsername: " + response2.body.username + "");
 },10000);
 
-test('should be correctly logging in existing user over UI', async () => {
+test('UI Test: should be correctly logging in existing user over UI', async () => {
+	console.log("****UI Test: should be correctly logging in existing user over UI****");
 	const browser = await puppeteer.launch({
 		headless: true,
 		slowMo: 80,
