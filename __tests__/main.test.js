@@ -33,7 +33,7 @@ test('should correctly generate and sign webtoken when logging in', async () => 
 			email: user.email,
 			password: '1450575459',
 		}).expect(200)
-	expect(response.body.accessToken).toMatch(new RegExp("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyeWZmaW5AZ214Lm5ldCIsImlhdCI6MTYyNDg"));
+	expect(response.body.accessToken).toMatch(new RegExp("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9."));
 	const jwt = response.body.accessToken;
 },10000);
 
